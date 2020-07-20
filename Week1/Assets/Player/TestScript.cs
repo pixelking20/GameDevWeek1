@@ -6,6 +6,7 @@ public class TestScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
+    public GameObject laser;
     public int score = 0;
     void Start()
     {
@@ -17,6 +18,10 @@ public class TestScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
             rb.velocity = new Vector3(0, 8, 0);
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            Instantiate(laser, this.transform.position, this.transform.rotation);
+        }
     }
     
     void OnCollisionEnter(Collision collision)
